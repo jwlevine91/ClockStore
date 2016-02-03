@@ -1,0 +1,19 @@
+<h1>All of our Clocks</h1>
+<div class="row">
+<% @clocks.each do |clock| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= clock.image %>">
+      <div class="caption">
+        <h3><%= clock.name %></h3>
+        <h3>Cost: $<%= clock.cost %></h3>
+        <%= link_to "More Info", clock, class: "btn btn-default" %>
+        </div>
+       </div>
+      </div>
+     <% end %>   
+</div>
+
+<br>
+
+<%= link_to 'New Clock', new_clock_path, class:"btn btn-primary" %>
